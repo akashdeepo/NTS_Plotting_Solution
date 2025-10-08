@@ -1,0 +1,22 @@
+Subject: NTS Plotting Implementation - Possible Solution
+
+Dear Dr. Rachev,
+
+I hope this email finds you well. I am not originally part of the project team, but I have recently been experimenting with Claude Code and saw the discussion about the NTS plotting challenges. I wanted to see if it could help sort this issue.
+
+I was able to fork the temStaPy and temStaR repositories that Dr. Kim shared and successfully run the code through Claude Code. I have generated plots for Figure 4.4(a) showing the NTS PDFs with the parameter configurations from your email thread (prior, high/low volatility, right skew, thick tails, and location shift, along with the N(0,1) reference).
+
+Please note that these may not be entirely correct, as I am not familiar with the full theoretical background, but I am attaching them in case they are helpful.
+
+I have also created a GitHub repository documenting the entire process:
+- Working Python implementation using temStaPy
+- Generated plots (PNG and PDF formats, 300 DPI)
+- Comprehensive sanity checks and validation results
+- Full documentation of the parameter mappings used
+
+GitHub Repository: https://github.com/akashdeepo/NTS_Plotting_Solution
+
+The CGMY-to-NTS parameter conversion I used may need verification against the theoretical relationships in the literature. Please feel free to review, modify, or disregard as appropriate. I hope this helps in some way.
+
+Best regards,
+Akash Deep
