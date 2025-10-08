@@ -1,10 +1,21 @@
-# NTS Distribution Plotting - SOLVED ✓
+# NTS Distribution Plotting & Probability Weighting Functions
 
-## Quick Summary
+## Research Project
 
-**Problem**: Unable to generate high-quality NTS (Normal Tempered Stable) density plots
-**Solution**: Use the `temStaPy` library provided by Aaron Kim
-**Status**: ✓ WORKING - Publication-quality plots generated successfully
+**Title**: Probability Weighting Functions for Normal Tempered-Stable Distributions
+**Authors**: Akash Deep, W. Brent Lindquist, Svetlozar T. Rachev
+**Institution**: Texas Tech University
+**Status**: ✓ Complete - All implementations working, paper in preparation
+
+## Overview
+
+This repository contains the complete implementation of Probability Weighting Functions (PWFs) for the Normal Tempered-Stable (NTS) distribution family, following the methodology of Section 4.3 in "Bridging Behavioral and Rational Finance: New Classes of Probability Weighting Functions."
+
+**Key Contributions**:
+- ✓ High-quality NTS density plots (Figure 4.4(a))
+- ✓ Six PWF cases isolating different behavioral channels
+- ✓ Publication-ready figures (300 DPI, PNG + PDF)
+- ✓ Comprehensive documentation and validation
 
 ## What Was Wrong
 
@@ -23,24 +34,40 @@ Aaron Kim's `temStaPy` library uses optimized FFT-based Gil-Pelaez inversion:
 - ✓ No oscillations or artifacts
 - ✓ Publication-quality output
 
-## Files in This Directory
+## Repository Contents
 
-### Generated Plots
-- `Figure_4_4_a_NTS_PDFs_temStaPy.png` - Main figure with all parameter variations
-- `Figure_4_4_a_NTS_PDFs_temStaPy.pdf` - Vector version for LaTeX
-- `nts_method_comparison.png` - Detailed analysis with log-scale tail view
+### 📊 Generated Figures (Publication-Ready)
 
-### Code
-- `test_nts_plotting.py` - Main script to generate Figure 4.4(a)
+**Density Plots**:
+- `Figure_4_4_a_NTS_PDFs_temStaPy.png/.pdf` - NTS density comparisons
+
+**Probability Weighting Functions** (6 cases):
+- `Figure_4_4_e_Case1_PWF_volatility.png/.pdf` - Scale/volatility channel
+- `Figure_4_4_f_Case2_PWF_skew.png/.pdf` - Skew/asymmetry channel
+- `Figure_4_4_g_Case3_PWF_tails.png/.pdf` - Tail-thickness channel
+- `Figure_4_4_h_Case4_PWF_location.png/.pdf` - Location channel
+- `Figure_4_4_i_Case5_PWF_joint.png/.pdf` - Joint dispersion-tail
+- `Figure_4_4_j_Case6_PWF_quantile_skew.png/.pdf` - Quantile-based skew
+
+### 🐍 Python Scripts
+
+- `test_nts_plotting.py` - Generate NTS density plots (Figure 4.4(a))
+- `pwf_implementation.py` - Compute all 6 PWF cases
 - `compare_methods.py` - Method comparison and validation
+- `sanity_check.py` - Comprehensive validation suite
 
-### Documentation
-- `ANALYSIS_AND_SOLUTION.md` - Detailed technical analysis
+### 📚 Documentation
+
 - `README.md` - This file
+- `PWF_DOCUMENTATION.md` - Comprehensive 50+ page guide
+- `PWF_SUMMARY.md` - Executive summary and results
+- `ANALYSIS_AND_SOLUTION.md` - Technical analysis of NTS plotting
+- `SANITY_CHECK_RESULTS.md` - PDF validation results
 
-### Libraries (cloned from GitHub)
-- `temStaPy_v0.5/` - Python NTS library
-- `temStaR-v0.90/` - R version with PDF documentation
+### 📦 Libraries
+
+- `temStaPy_v0.5/` - Python NTS library (by Aaron Kim)
+- `temStaR-v0.90/` - R version with documentation
 
 ## How to Use
 
