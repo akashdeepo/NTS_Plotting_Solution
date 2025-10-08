@@ -46,3 +46,13 @@ Thumbs.db
 # Temporary files
 *.log
 *.tmp
+
+# Private communications and drafts
+email_to_dr_rachev.txt
+reply_to_dr_rachev_pwf.txt
+
+# Source documents (copyrighted/private)
+*.docx
+
+# Extracted working files
+section_4_3_extracted.txt
