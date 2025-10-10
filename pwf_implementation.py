@@ -15,7 +15,7 @@ import sys
 from scipy.integrate import trapezoid
 
 # Add temStaPy to path
-sys.path.insert(0, r'c:\Users\Akash\OneDrive\Desktop\plotting issue\temStaPy_v0.5')
+sys.path.insert(0, r'c:\Users\Akash\OneDrive\Desktop\PWFs for NTS\temStaPy_v0.5')
 
 from temStaPy.distNTS import dnts, pnts, qnts
 

@@ -1,58 +1,32 @@
-# Python
-__pycache__/
-*.py[cod]
-*$py.class
-*.so
-.Python
-build/
-develop-eggs/
-dist/
-downloads/
-eggs/
-.eggs/
-lib/
-lib64/
-parts/
-sdist/
-var/
-wheels/
-*.egg-info/
-.installed.cfg
-*.egg
+# Manuscript materials (not for public release yet)
+Manuscript Draft/
+PAPER_DRAFT_NTS_PWF.md
+MANUSCRIPT_RESULTS_SUMMARY.md
+final_submission/Manuscript Draft/
+final_submission/PAPER_DRAFT_NTS_PWF.md
+final_submission/MANUSCRIPT_RESULTS_SUMMARY.md
 
-# Jupyter Notebook
-.ipynb_checkpoints
-
-# Environment
-.env
-.venv
-env/
-venv/
-ENV/
-env.bak/
-venv.bak/
-
-# IDEs
-.vscode/
-.idea/
-*.swp
-*.swo
-*~
-
-# OS
-.DS_Store
-Thumbs.db
-
-# Temporary files
-*.log
-*.tmp
-
-# Private communications and drafts
+# Dr. Rachev's original files
+*.docx
+section_4_3_extracted.txt
 email_to_dr_rachev.txt
 reply_to_dr_rachev_pwf.txt
 
-# Source documents (copyrighted/private)
-*.docx
+# Reference materials (may have copyright)
+reference_material/
 
-# Extracted working files
-section_4_3_extracted.txt
+# Archive of old work
+archive/analysis_docs/
+
+# Internal analysis
+BEHAVIORAL_INTERPRETATION.md
+SADDLEPOINT_VS_FFT_ANALYSIS.md
+VALIDATION_REPORT.md
+
+# Local settings
+.claude/
+
+# Python cache
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
