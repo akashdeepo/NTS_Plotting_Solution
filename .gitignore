@@ -1,32 +1,83 @@
-# Manuscript materials (not for public release yet)
-Manuscript Draft/
-PAPER_DRAFT_NTS_PWF.md
-MANUSCRIPT_RESULTS_SUMMARY.md
-final_submission/Manuscript Draft/
-final_submission/PAPER_DRAFT_NTS_PWF.md
-final_submission/MANUSCRIPT_RESULTS_SUMMARY.md
+# Working directories
+current/
+private/
+archive/
 
-# Dr. Rachev's original files
+# Manuscripts and docs
 *.docx
-section_4_3_extracted.txt
-email_to_dr_rachev.txt
-reply_to_dr_rachev_pwf.txt
+*.doc
+manuscripts/
+manuscripts_archive/
+Manuscript Draft/
 
-# Reference materials (may have copyright)
-reference_material/
+# Analysis docs (except README)
+*.md
+!README.md
 
-# Archive of old work
-archive/analysis_docs/
+# Images (only track PDFs)
+*.png
+*.jpg
+*.jpeg
+*.svg
+*.eps
 
-# Internal analysis
-BEHAVIORAL_INTERPRETATION.md
-SADDLEPOINT_VS_FFT_ANALYSIS.md
-VALIDATION_REPORT.md
-
-# Local settings
-.claude/
-
-# Python cache
+# Python
 __pycache__/
-*.py[cod]
+*.pyc
+*.pyo
+*.pyd
+.Python
+*.so
 .ipynb_checkpoints/
+*.ipynb
+
+# Libraries (already elsewhere)
+temStaPy*/
+temStaR*/
+lib/
+
+# Temporary
+*.tmp
+*.bak
+*.swp
+*~
+.DS_Store
+Thumbs.db
+
+# Personal
+notes/
+*_notes.txt
+TODO.txt
+personal/
+
+# Email/communications
+email*.txt
+correspondence/
+communications/
+
+# Output files (except PDFs in latest_commits)
+outputs/
+*.log
+*.out
+
+# Environment
+.env
+venv/
+env/
+ENV/
+
+# IDE
+.vscode/
+.idea/
+*.sublime-*
+.spyderproject
+.spyproject
+
+# OS
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db

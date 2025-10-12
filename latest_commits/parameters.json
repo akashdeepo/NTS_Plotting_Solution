@@ -1,0 +1,48 @@
+{
+  "version": "1.0",
+  "date": "2025-10-11",
+  "cases": {
+    "case1": {
+      "type": "Scale/Volatility",
+      "common": {
+        "mu": 0.0,
+        "C": 0.6,
+        "G": 5.0,
+        "M": 5.0,
+        "Y": 1.2
+      },
+      "benchmark": {
+        "sigma": 1.0
+      },
+      "fearful": {
+        "sigma": 1.4
+      },
+      "greedy": {
+        "sigma": 0.7
+      }
+    },
+    "case2": {
+      "type": "Skew/Asymmetry",
+      "common": {
+        "mu": 0.0,
+        "C": 0.6,
+        "Y": 1.2
+      },
+      "benchmark": {
+        "G": 5.0,
+        "M": 5.0,
+        "sigma": 1.0
+      },
+      "greedy": {
+        "G": 9.0,
+        "M": 3.0,
+        "sigma": 0.98
+      },
+      "fearful": {
+        "G": 3.0,
+        "M": 9.0,
+        "sigma": 1.02
+      }
+    }
+  }
+}
