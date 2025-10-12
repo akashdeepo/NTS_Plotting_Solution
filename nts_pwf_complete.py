@@ -259,11 +259,17 @@ def generate_pwf_case(case_num, case_name, fearful_key, greedy_key, figure_lette
     # Plot 45-degree line (reference)
     ax.plot([0, 1], [0, 1], 'k--', linewidth=1.5, label='45° line', alpha=0.7)
 
-    # Plot PWFs
-    ax.plot(u_grid, w_fearful, 'b-', linewidth=2,
-            label=f'Fearful (ξ={xi_fearful:.4f})')
-    ax.plot(u_grid, w_greedy, 'r-', linewidth=2,
-            label=f'Greedy (ξ={xi_greedy:.4f})')
+    # Plot PWFs (without xi values for Case 1 as requested by Dr. Rachev)
+    if case_num == 1:
+        # Case 1: No xi values in legend per Dr. Rachev's request
+        ax.plot(u_grid, w_fearful, 'b-', linewidth=2, label='Fearful')
+        ax.plot(u_grid, w_greedy, 'r-', linewidth=2, label='Greedy')
+    else:
+        # Other cases: Include xi values
+        ax.plot(u_grid, w_fearful, 'b-', linewidth=2,
+                label=f'Fearful (ξ={xi_fearful:.4f})')
+        ax.plot(u_grid, w_greedy, 'r-', linewidth=2,
+                label=f'Greedy (ξ={xi_greedy:.4f})')
 
     # Formatting
     ax.set_xlabel('u', fontsize=12)
