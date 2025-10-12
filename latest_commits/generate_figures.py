@@ -11,11 +11,11 @@ import warnings
 warnings.filterwarnings('ignore')
 
 # Add temStaPy to path
-sys.path.insert(0, r'c:\Users\Akash\OneDrive\Desktop\PWFs for NTS\temStaPy_v0.5')
+sys.path.insert(0, os.path.join(os.path.dirname(os.path.dirname(__file__)), 'lib', 'temStaPy_v0.5'))
 from temStaPy.distNTS import qnts, pnts, dnts
 
 # Create output directory
-OUTPUT_DIR = "manuscript_figures"
+OUTPUT_DIR = "figures"
 if not os.path.exists(OUTPUT_DIR):
     os.makedirs(OUTPUT_DIR)
 
@@ -48,6 +48,116 @@ def compute_pwf(u_grid, prior_params, post_params):
 mu = 0.0
 C = 0.6
 Y = 1.2
+
+# ============================================================================
+# FIGURES 2(a), 2(b), 2(c): NTS FUNDAMENTALS
+# ============================================================================
+
+print("\n" + "-"*80)
+print("Generating NTS Fundamental Figures (2a, 2b, 2c)")
+print("-"*80)
+
+# Parameters for fundamental figures (showing NTS properties)
+G_base = 5.0
+M_base = 5.0
+sigma_base = 1.0
+
+# Different specifications to show variety
+nts_base = cgmy_to_nts(C, G_base, M_base, Y, mu, sigma_base)
+nts_high_vol = cgmy_to_nts(C, G_base, M_base, Y, mu, 1.4)
+nts_low_vol = cgmy_to_nts(C, G_base, M_base, Y, mu, 0.7)
+
+x_grid = np.linspace(-6, 6, 1201)
+u_grid = np.linspace(0.001, 0.999, 999)
+
+# ----------------------------------------
+# Figure 2(a): PDFs
+# ----------------------------------------
+print("Generating Figure 2(a): NTS PDFs...")
+
+pdf_base = dnts(x_grid, nts_base)
+pdf_high_vol = dnts(x_grid, nts_high_vol)
+pdf_low_vol = dnts(x_grid, nts_low_vol)
+
+fig, ax = plt.subplots(figsize=(8, 6))
+ax.plot(x_grid, pdf_base, 'k-', linewidth=2, label='Benchmark (sigma=1.0)', alpha=0.8)
+ax.plot(x_grid, pdf_high_vol, 'b-', linewidth=2, label='High volatility (sigma=1.4)', alpha=0.8)
+ax.plot(x_grid, pdf_low_vol, 'r-', linewidth=2, label='Low volatility (sigma=0.7)', alpha=0.8)
+
+ax.set_xlabel('x', fontsize=12)
+ax.set_ylabel('f_X(x)', fontsize=12)
+ax.set_title('Figure 2(a): PDFs of Normal Tempered-Stable distributions', fontsize=13)
+ax.legend(fontsize=11)
+ax.grid(True, alpha=0.3)
+ax.set_xlim(-6, 6)
+ax.set_ylim(0, None)
+plt.tight_layout()
+
+save_path = os.path.join(OUTPUT_DIR, 'Figure_2a_NTS_PDFs')
+plt.savefig(save_path + '.png', dpi=300, bbox_inches='tight')
+plt.savefig(save_path + '.pdf', bbox_inches='tight')
+plt.close()
+print(f"  Saved: {save_path}.png and .pdf")
+
+# ----------------------------------------
+# Figure 2(b): CDFs
+# ----------------------------------------
+print("Generating Figure 2(b): NTS CDFs...")
+
+cdf_base = pnts(x_grid, nts_base)
+cdf_high_vol = pnts(x_grid, nts_high_vol)
+cdf_low_vol = pnts(x_grid, nts_low_vol)
+
+fig, ax = plt.subplots(figsize=(8, 6))
+ax.plot(x_grid, cdf_base, 'k-', linewidth=2, label='Benchmark (sigma=1.0)', alpha=0.8)
+ax.plot(x_grid, cdf_high_vol, 'b-', linewidth=2, label='High volatility (sigma=1.4)', alpha=0.8)
+ax.plot(x_grid, cdf_low_vol, 'r-', linewidth=2, label='Low volatility (sigma=0.7)', alpha=0.8)
+
+ax.set_xlabel('x', fontsize=12)
+ax.set_ylabel('F_X(x)', fontsize=12)
+ax.set_title('Figure 2(b): CDFs of Normal Tempered-Stable distributions', fontsize=13)
+ax.legend(fontsize=11)
+ax.grid(True, alpha=0.3)
+ax.set_xlim(-6, 6)
+ax.set_ylim(0, 1)
+plt.tight_layout()
+
+save_path = os.path.join(OUTPUT_DIR, 'Figure_2b_NTS_CDFs')
+plt.savefig(save_path + '.png', dpi=300, bbox_inches='tight')
+plt.savefig(save_path + '.pdf', bbox_inches='tight')
+plt.close()
+print(f"  Saved: {save_path}.png and .pdf")
+
+# ----------------------------------------
+# Figure 2(c): Quantile Functions
+# ----------------------------------------
+print("Generating Figure 2(c): NTS Quantile Functions...")
+
+q_base = qnts(u_grid, nts_base)
+q_high_vol = qnts(u_grid, nts_high_vol)
+q_low_vol = qnts(u_grid, nts_low_vol)
+
+fig, ax = plt.subplots(figsize=(8, 6))
+ax.plot(u_grid, q_base, 'k-', linewidth=2, label='Benchmark (sigma=1.0)', alpha=0.8)
+ax.plot(u_grid, q_high_vol, 'b-', linewidth=2, label='High volatility (sigma=1.4)', alpha=0.8)
+ax.plot(u_grid, q_low_vol, 'r-', linewidth=2, label='Low volatility (sigma=0.7)', alpha=0.8)
+
+ax.set_xlabel('u', fontsize=12)
+ax.set_ylabel('Q(u)', fontsize=12)
+ax.set_title('Figure 2(c): Quantile functions of Normal Tempered-Stable distributions', fontsize=13)
+ax.legend(fontsize=11)
+ax.grid(True, alpha=0.3)
+ax.set_xlim(0, 1)
+ax.set_ylim(-6, 6)
+plt.tight_layout()
+
+save_path = os.path.join(OUTPUT_DIR, 'Figure_2c_NTS_Quantiles')
+plt.savefig(save_path + '.png', dpi=300, bbox_inches='tight')
+plt.savefig(save_path + '.pdf', bbox_inches='tight')
+plt.close()
+print(f"  Saved: {save_path}.png and .pdf")
+
+print("  NTS Fundamentals Complete: All 3 figures generated")
 
 # ============================================================================
 # CASE 1: SCALE/VOLATILITY CHANNEL
