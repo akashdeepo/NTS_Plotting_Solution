@@ -15,6 +15,15 @@ Manuscript Draft/
 !README.md
 !CHANGELOG*.md
 !figures_*/README.md
+!LICENSE.md
+!CONTRIBUTING.md
+
+# Old summary/status files (keep only CHANGELOG)
+FINAL_SUMMARY*.md
+IMPLEMENTATION_SUMMARY*.md
+VERIFICATION_CHECKLIST*.md
+*_SUMMARY*.md
+*_NOTES*.md
 
 # Images (only track PDFs)
 *.png
@@ -65,6 +74,12 @@ outputs/
 # Old figure directories (keep only dated folders)
 manuscript_figures_FINAL/
 manuscript_figures_revised/
+manuscript_figures/
+
+# Other experimental outputs
+experimental_*.png
+test_*.png
+scratch_*.png
 
 # Environment
 .env
