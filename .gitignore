@@ -10,9 +10,11 @@ manuscripts/
 manuscripts_archive/
 Manuscript Draft/
 
-# Analysis docs (except README)
+# Analysis docs (except README and CHANGELOG)
 *.md
 !README.md
+!CHANGELOG*.md
+!figures_*/README.md
 
 # Images (only track PDFs)
 *.png
@@ -55,10 +57,14 @@ email*.txt
 correspondence/
 communications/
 
-# Output files (except PDFs in latest_commits)
+# Output files (except PDFs in specific folders)
 outputs/
 *.log
 *.out
+
+# Old figure directories (keep only dated folders)
+manuscript_figures_FINAL/
+manuscript_figures_revised/
 
 # Environment
 .env
